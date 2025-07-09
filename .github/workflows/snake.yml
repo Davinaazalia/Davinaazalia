@@ -1,0 +1,29 @@
+name: Generate Snake Animation
+
+on:
+  schedule:
+    # Runs at 00:00 UTC everyday (tentukan waktu agar animasi diperbarui setiap hari)
+    - cron: "0 0 * * *"
+  workflow_dispatch: # Memungkinkan Anda menjalankan action secara manual dari GitHub
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: Platane/snk@v3
+        id: snake-gif
+        with:
+          github_user_name: Davinaazalia # PASTIKAN INI USERNAME GITHUB ANDA
+          outputs: |
+            dist/github-contribution-grid-snake.svg       # Ini adalah gambar yang akan digunakan di README Anda
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark-blue # Opsi tema gelap biru
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Token otomatis dari GitHub
+
+      - uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: output # Branch tempat animasi SVG akan disimpan
+          build_dir: dist # Direktori tempat Platane/snk menghasilkan output
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Token otomatis dari GitHub
