@@ -52,6 +52,12 @@ Here are some of the projects I'm proud of:
   <img src="https://streak-stats.demolab.com/?user=Davinaazalia&theme=cobalt&hide_border=true&background=0d1117&ring=4A90E2&fire=3B82F6&currStreakLabel=4A90E2" alt="GitHub Streak" />
 </div>
 
+### My Contributions Animation 🐍
+
+<div align="center">
+  <img src="https://github.com/Davinaazalia/Davinaazalia/raw/refs/heads/output/github-contribution-grid-snake-dark.svg" alt="Snake animation" />
+</div>
+
 ---
 
 ## Let's Connect & Collaborate! 🤝
